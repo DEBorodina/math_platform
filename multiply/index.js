@@ -38,7 +38,7 @@ function generateNum(){
 
     setLastNums([firstNum,secondNum]);
 
-    task.innerHTML=res;
+    task.innerHTML=res.replaceAll(".", ",");
     return (firstNum*secondNum).toFixed(4);
 }
 
@@ -47,7 +47,7 @@ function generateNum(){
 function App(){
     if(localStorage.getItem('multiplyLastNums')!==null){
         let mass = JSON.parse(localStorage.getItem('multiplyLastNums'));
-        task.innerHTML = mass[0] + " &#183; " + mass[1];
+        task.innerHTML = (mass[0] + " &#183; " + mass[1]).replaceAll(".", ",");
         rightAnswer = (mass[0]*mass[1]).toFixed(4);
     }else{
         rightAnswer = generateNum();
