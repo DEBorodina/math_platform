@@ -1,0 +1,18 @@
+html,
+body {
+  background: linear-gradient(135deg, #0ccda3, #9ffdba) no-repeat;
+  height: 100%;
+}
+
+.title {
+  font-family: Raleway;
+  font-size: 64px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
