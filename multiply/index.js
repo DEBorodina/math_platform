@@ -54,11 +54,12 @@ function App(){
     }    
     score.innerHTML = `Твой счет: ${(localStorage.getItem('multiplyScore')===null)?0:localStorage.getItem('multiplyScore')}`;
     checkButton.addEventListener('click',()=>{
-        if(Math.abs(answer.value-rightAnswer)<=0.00001){
+        if(Math.abs((answer.value).replace(",", ".")-rightAnswer)<=0.00001){
             rightAnswer = generateNum();
             answer.value="";
             setLocalStorage();
             score.innerHTML = `Твой счет: ${localStorage.getItem('multiplyScore')}`;
+            wrong.innerHTML="";
         }else{
             wrong.innerHTML="Попробуй еще раз!";
         }

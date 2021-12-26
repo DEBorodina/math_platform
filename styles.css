@@ -1,5 +1,12 @@
+* {
+  box-sizing: border-box;
+}
 body {
   height: 100%;
+  font-family: "Bellota", cursive;
+}
+
+button {
   font-family: "Bellota", cursive;
 }
 
@@ -7,6 +14,14 @@ body {
   text-align: center;
   font-size: 64px;
   font-weight: 400;
+  color: #000;
+}
+
+.task {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
   color: #000;
 }
 
@@ -28,10 +43,18 @@ body {
   text-decoration: none;
   font-size: 25px;
   font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
 
 .button:hover {
-  background-color: #abe1fd;
+  transition: all 0.5s;
+  background-color: #bae7ffc9;
+}
+
+.button:active {
+  transition: all 0.5s;
+  background-color: #aee1ff;
 }
 
 .img {
@@ -44,6 +67,68 @@ body {
   justify-content: space-around;
   width: 90%;
   margin: 0 auto;
+}
+
+.container_answers {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.answer {
+  text-align: center;
+  height: 70px;
+  width: 60%;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #abe1fd;
+  outline: none;
+  font-family: "Bellota", cursive;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.form__button {
+  width: 25%;
+  height: 80px;
+  text-align: center;
+  padding: 20px;
+  background-color: #bae7ff;
+  border-radius: 15px;
+  color: #000;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.form__button:hover {
+  transition: all 0.5s;
+  background-color: #bae7ffc9;
+}
+
+.form__button:active {
+  transition: all 0.5s;
+  background-color: #aee1ff;
+}
+
+.wrong {
+  font-size: 30px;
 }
 
 @media (max-width: 1336px) {
@@ -66,5 +151,15 @@ body {
     width: 70%;
     margin: 0 auto;
     margin-top: 20px;
+  }
+  .form {
+    width: 100%;
+  }
+  .form__buttons {
+    width: 100%;
+  }
+  .form__button {
+    width: 55%;
+    text-align: center;
   }
 }
