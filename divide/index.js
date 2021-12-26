@@ -28,7 +28,7 @@ function generateNum(){
     let res, firstNum, secondNum;
 
     while(true){
-        let rand =  Math.round(Math.random()*2)
+        let rand =  Math.round(Math.random()*3-0.5)
         console.log(rand);
         if(rand==0){
             firstNum = Math.floor(Math.random()*10)/10 + Math.floor(Math.random()*10);
@@ -65,11 +65,12 @@ function App(){
     }    
     score.innerHTML = `Твой счет: ${(localStorage.getItem('divideScore')===null)?0:localStorage.getItem('divideScore')}`;
     checkButton.addEventListener('click',()=>{
-        if(Math.abs(answer.value-rightAnswer)<=0.00001){
+        if(Math.abs((answer.value).replace(",", ".")-rightAnswer)<=0.00001){
             rightAnswer = generateNum();
             answer.value="";
             setLocalStorage();
             score.innerHTML = `Твой счет: ${localStorage.getItem('divideScore')}`;
+            wrong.innerHTML="";
         }else{
             wrong.innerHTML="Попробуй еще раз!";
         }
